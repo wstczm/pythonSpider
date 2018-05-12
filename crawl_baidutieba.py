@@ -18,8 +18,7 @@ for item in items:
     ).replace('\n', '').replace('\r', '').replace('\t', '').replace(' ', '')
 
     try:
-        content = item.select("div[id*='post_content_']")[0].get_text().replace('\n',
-                                                                                '').replace('\r', '').replace('\t', '').replace('            ', '')
+        content = item.select("div[id*='post_content_']")[0].get_text().replace('\n', '').replace('\r', '').replace('\t', '').replace('            ', '')
         tails = item.select("div.d_post_content_main div.core_reply.j_lzl_wrapper div.core_reply_tail.clearfix div.post-tail-wrap span")
         for tail in tails:
             if u'楼' in tail.get_text():
