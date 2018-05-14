@@ -3,5 +3,10 @@
 # @Date    : 2018-05-14 21:50:02
 # @Author  : james.zhang
 
-with open('/path/to/file', 'r') as f:
-    print f.read()
+
+sfile = 'C:/Users/Administrator/Desktop/test.txt'
+tfile = 'C:/Users/Administrator/Desktop/test2.txt'
+
+with open(sfile, 'r') as sf:
+    with open(tfile, 'w') as tf:
+        tf.write(sf.read())
