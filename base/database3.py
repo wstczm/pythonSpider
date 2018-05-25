@@ -5,3 +5,4 @@
 
 import cx_Oracle
 conn = cx_Oracle.connect('system', 'zmW$TC2Morcl', 'myoracle:1521/orcl')
+

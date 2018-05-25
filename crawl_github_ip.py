@@ -4,7 +4,6 @@
 # @Author  : james.zhang
 
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import os
 
@@ -28,10 +27,10 @@ for url in githuburl:
         items = bs.select("li.ReListCent.ReLists.bor-b1s.clearfix")
         for item in items:
             try:
-                
-                ip =  item.select("div.w60-0.tl p")[0].get_text().split(' ')[0]
+
+                ip = item.select("div.w60-0.tl p")[0].get_text().split(' ')[0]
                 time = item.select("div.w14-0 p")[0].get_text()
-                
+
                 if ip not in ips:
                     ips[ip] = [int(time)]
                 else:
@@ -47,7 +46,7 @@ for url in githuburl:
     minip = None
     mintime = None
     for i, ip in enumerate(ips):
-        avgtime = sum(ips[ip])/len(ips[ip])
+        avgtime = sum(ips[ip]) / len(ips[ip])
         if i == 0 or avgtime < mintime:
             mintime = avgtime
             minip = ip
